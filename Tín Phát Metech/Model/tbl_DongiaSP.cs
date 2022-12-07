@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tín_Phát_Metech.EF.Data.edmx.Data.Context.tt;
-using Tín_Phát_Metech.EF.Data.edmx.Data.tt;
+using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
     public class tbl_DongiaSP
     {
         TinPhatEntities db = new TinPhatEntities();
-        public DongiaSP getItem(string ID)
+        public Dongia getItem(string ID)
         {
-            return db.DongiaSP.FirstOrDefault(x => x.Ma_DG == ID);
+            return db.Dongia.FirstOrDefault(x => x.MaDG == ID);
         }
-        public List<DongiaSP> getList()
+        public List<Dongia> getList()
         {
-            return db.DongiaSP.ToList();
+            return db.Dongia.ToList();
         }
-        public DongiaSP add(DongiaSP to)
+        public Dongia add(Dongia to)
         {
             try
             {
-                db.DongiaSP.Add(to);
+                db.Dongia.Add(to);
                 db.SaveChanges();
                 return to;
             }
@@ -32,17 +31,16 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public DongiaSP update(DongiaSP to)
+        public Dongia update(Dongia to)
         {
             try
             {
-                var _To = db.DongiaSP.FirstOrDefault(x => x.Ma_DG == to.Ma_DG);
-                _To.Ma_SP = to.Ma_SP;
-                _To.Ten_SP = to.Ten_SP;
-                _To.DVT = to.DVT;
-                _To.SL = to.SL;
+                var _To = db.Dongia.FirstOrDefault(x => x.MaDG == to.MaDG);
                 _To.Gia = to.Gia;
+                _To.MaDV = to.MaDV;
+                _To.MaSP = to.MaSP;
                 _To.Note = to.Note;
+                _To.TenSP = to.TenSP;
                 db.SaveChanges();
                 return to;
             }
@@ -51,12 +49,12 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public DongiaSP delete(string id)
+        public Dongia delete(string id)
         {
             try
             {
-                var _To = db.DongiaSP.FirstOrDefault(x => x.Ma_DG == id);
-                db.DongiaSP.Remove(_To);
+                var _To = db.Dongia.FirstOrDefault(x => x.MaDG == id);
+                db.Dongia.Remove(_To);
                 db.SaveChanges();
                 return _To;
             }

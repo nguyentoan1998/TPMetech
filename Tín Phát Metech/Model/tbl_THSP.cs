@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tín_Phát_Metech.EF.Data.edmx.Data.Context.tt;
-using Tín_Phát_Metech.EF.Data.edmx.Data.tt;
+using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
     public class tbl_THSP
     {
         TinPhatEntities db = new TinPhatEntities();
-        public THSP getItem(decimal ID)
+        public THSP getItem(string ID)
         {
-            return db.THSP.FirstOrDefault(x => x.Ma_THSP == ID);
+            return db.THSP.FirstOrDefault(x => x.MaTHSP == ID);
         }
         public List<THSP> getList()
         {
@@ -36,15 +35,17 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _To = db.THSP.FirstOrDefault(x => x.Ma_THSP == to.Ma_THSP);
-                _To.Date_THSP = to.Date_THSP;
-                _To.DVT = to.DVT;
-                _To.Gia = to.Gia;
-                _To.Ma_Kho = to.Ma_Kho;
-                _To.Ma_NV = to.Ma_NV;
+                var _To = db.THSP.FirstOrDefault(x => x.MaTHSP == to.MaTHSP);
+                _To.Date = to.Date;
+                _To.MaBTP= to.MaBTP;
+                _To.MaDG = to.MaDG;
+                _To.MaDV = to.MaDV;
+                _To.MaKho = to.MaKho;
+                _To.MaNV = to.MaNV;
+                _To.MaTP = to.MaTP;
+                _To.MaVL = to.MaVL;
                 _To.Note = to.Note;
                 _To.SL = to.SL;
-                _To.TenSP = to.TenSP;
                 _To.Tien = to.Tien;
                 db.SaveChanges();
                 return to;
@@ -54,11 +55,11 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public THSP delete(decimal id)
+        public THSP delete(string id)
         {
             try
             {
-                var _To = db.THSP.FirstOrDefault(x => x.Ma_THSP == id);
+                var _To = db.THSP.FirstOrDefault(x => x.MaTHSP == id);
                 db.THSP.Remove(_To);
                 db.SaveChanges();
                 return _To;

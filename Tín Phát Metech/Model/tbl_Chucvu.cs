@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tín_Phát_Metech.EF.Data.edmx.Data.Context.tt;
-using Tín_Phát_Metech.EF.Data.edmx.Data.tt;
+using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
@@ -13,7 +12,7 @@ namespace Tín_Phát_Metech.Model
         TinPhatEntities db = new TinPhatEntities();
         public Chucvu getItem(string ID)
         {
-            return db.Chucvu.FirstOrDefault(x => x.Ma_CV == ID);
+            return db.Chucvu.FirstOrDefault(x => x.MaCV == ID);
         }
         public List<Chucvu> getList()
         {
@@ -35,11 +34,10 @@ namespace Tín_Phát_Metech.Model
         public Chucvu update(Chucvu Chucvu)
         {
             try
-            {
-                var _Chucvu = db.Chucvu.FirstOrDefault(x => x.Ma_CV == Chucvu.Ma_CV);
-                _Chucvu.Ten_CV = Chucvu.Ten_CV;
-                _Chucvu.Note_CV = Chucvu.Note_CV;
-                _Chucvu.Theodoi_CV = Chucvu.Theodoi_CV;
+            { 
+                var _Chucvu = db.Chucvu.FirstOrDefault(x => x.MaCV== Chucvu.MaCV);
+                _Chucvu.TenCV = Chucvu.TenCV;
+                _Chucvu.Note = Chucvu.Note;
                 db.SaveChanges();
                 return Chucvu;
             }
@@ -52,7 +50,7 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _Chucvu = db.Chucvu.FirstOrDefault(x => x.Ma_CV == id);
+                var _Chucvu = db.Chucvu.FirstOrDefault(x => x.MaCV == id);
                 db.Chucvu.Remove(_Chucvu);
                 db.SaveChanges();
                 return _Chucvu;

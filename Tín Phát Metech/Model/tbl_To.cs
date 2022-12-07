@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tín_Phát_Metech.EF.Data.edmx.Data.Context.tt;
-using Tín_Phát_Metech.EF.Data.edmx.Data.tt;
+using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
@@ -13,7 +12,7 @@ namespace Tín_Phát_Metech.Model
         TinPhatEntities db = new TinPhatEntities();
         public To getItem(string ID)
         {
-            return db.To.FirstOrDefault(x => x.Ma_To == ID);
+            return db.To.FirstOrDefault(x => x.MaTo == ID);
         }
         public List<To> getList()
         {
@@ -36,10 +35,9 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _To = db.To.FirstOrDefault(x => x.Ma_To == to.Ma_To);
-                _To.Ten_To = to.Ten_To;
-                _To.Note_To = to.Note_To;
-                _To.Theodoi_To = to.Theodoi_To;
+                var _To = db.To.FirstOrDefault(x => x.MaTo == to.MaTo);
+                _To.TenTo = to.TenTo;
+                _To.Note = to.Note;
                 db.SaveChanges();
                 return to;
             }
@@ -52,7 +50,7 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _To = db.To.FirstOrDefault(x => x.Ma_To == id);
+                var _To = db.To.FirstOrDefault(x => x.MaTo == id);
                 db.To.Remove(_To);
                 db.SaveChanges();
                 return _To;

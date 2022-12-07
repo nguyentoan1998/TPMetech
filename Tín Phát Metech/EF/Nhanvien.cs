@@ -15,14 +15,28 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class NCC
+public partial class Nhanvien
 {
 
-    public string MaNCC { get; set; }
+    public string MaNV { get; set; }
 
-    public string TenNCC { get; set; }
+    public string MaCV { get; set; }
 
-    public string Note { get; set; }
+    public byte[] HaNV { get; set; }
+
+    public string TenNV { get; set; }
+
+    public bool Sex { get; set; }
+
+    public Nullable<short> SDT { get; set; }
+
+    public string Address { get; set; }
+
+    public Nullable<short> CCCD { get; set; }
+
+    public Nullable<System.DateTime> ByDate { get; set; }
+
+    public Nullable<System.DateTime> CreatDtae { get; set; }
 
 }
 

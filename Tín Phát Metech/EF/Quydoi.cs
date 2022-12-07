@@ -15,12 +15,22 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class NCC
+public partial class Quydoi
 {
 
-    public string MaNCC { get; set; }
+    public string MaQD { get; set; }
 
-    public string TenNCC { get; set; }
+    public string MaVL { get; set; }
+
+    public string MaQC { get; set; }
+
+    public string TenQD { get; set; }
+
+    public string MaDVQD { get; set; }
+
+    public string MaDVC { get; set; }
+
+    public short Tyle { get; set; }
 
     public string Note { get; set; }
 

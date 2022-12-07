@@ -215,16 +215,15 @@ namespace Tín_Phát_Metech
             FormShow show = new FormShow(btnDonvitinh.Caption, true);
             KiemtraForm(show, btnDonvitinh.Caption);
         }
-        #endregion
-
         private void btnTongquan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+
         }
 
         private void btnDoanhthu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
         }
+        #endregion
     }
 }

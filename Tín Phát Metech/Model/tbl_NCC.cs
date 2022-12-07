@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tín_Phát_Metech.EF.Data.edmx.Data.Context.tt;
-using Tín_Phát_Metech.EF.Data.edmx.Data.tt;
+using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
@@ -13,7 +12,7 @@ namespace Tín_Phát_Metech.Model
         TinPhatEntities db = new TinPhatEntities();
         public NCC getItem(string ID)
         {
-            return db.NCC.FirstOrDefault(x => x.Ma_NCC == ID);
+            return db.NCC.FirstOrDefault(x => x.MaNCC == ID);
         }
         public List<NCC> getList()
         {
@@ -36,11 +35,9 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _NCC = db.NCC.FirstOrDefault(x => x.Ma_NCC == NCC.Ma_NCC);
-                _NCC.Ten_NCC = NCC.Ten_NCC;
-                _NCC.Diachi_NCC = NCC.Diachi_NCC;
-                _NCC.Note_NCC = NCC.Note_NCC;
-                _NCC.Is_KH = NCC.Is_KH;
+                var _NCC = db.NCC.FirstOrDefault(x => x.MaNCC == NCC.MaNCC);
+                _NCC.TenNCC = NCC.TenNCC;
+                _NCC.Note = NCC.Note;
                 db.SaveChanges();
                 return NCC;
             }
@@ -53,7 +50,7 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _NCC = db.NCC.FirstOrDefault(x => x.Ma_NCC == id);
+                var _NCC = db.NCC.FirstOrDefault(x => x.MaNCC == id);
                 db.NCC.Remove(_NCC);
                 db.SaveChanges();
                 return _NCC;

@@ -15,12 +15,18 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class NCC
+public partial class Dongia
 {
 
-    public string MaNCC { get; set; }
+    public string MaDG { get; set; }
 
-    public string TenNCC { get; set; }
+    public string MaSP { get; set; }
+
+    public string TenSP { get; set; }
+
+    public string MaDV { get; set; }
+
+    public decimal Gia { get; set; }
 
     public string Note { get; set; }
 

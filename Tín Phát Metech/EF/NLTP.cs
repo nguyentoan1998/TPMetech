@@ -15,12 +15,18 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class NCC
+public partial class NLTP
 {
 
-    public string MaNCC { get; set; }
+    public string MaNL { get; set; }
 
-    public string TenNCC { get; set; }
+    public string MaBTP { get; set; }
+
+    public string MaTP { get; set; }
+
+    public string TenBTP { get; set; }
+
+    public short SL { get; set; }
 
     public string Note { get; set; }
 

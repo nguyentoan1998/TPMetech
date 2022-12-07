@@ -15,12 +15,20 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class NCC
+public partial class Tonkho
 {
 
-    public string MaNCC { get; set; }
+    public string MaTKho { get; set; }
 
-    public string TenNCC { get; set; }
+    public string MaVL { get; set; }
+
+    public string MaBTP { get; set; }
+
+    public Nullable<decimal> MaTP { get; set; }
+
+    public string MaDV { get; set; }
+
+    public short SL { get; set; }
 
     public string Note { get; set; }
 

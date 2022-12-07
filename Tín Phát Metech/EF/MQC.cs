@@ -15,12 +15,24 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class NCC
+public partial class MQC
 {
 
-    public string MaNCC { get; set; }
+    public string MaQC { get; set; }
 
-    public string TenNCC { get; set; }
+    public string MaVL { get; set; }
+
+    public string MaBTP { get; set; }
+
+    public string MaTP { get; set; }
+
+    public string TenQC { get; set; }
+
+    public Nullable<short> Giamua { get; set; }
+
+    public Nullable<short> Giaban { get; set; }
+
+    public Nullable<short> Dongia { get; set; }
 
     public string Note { get; set; }
 

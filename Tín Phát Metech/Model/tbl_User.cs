@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tín_Phát_Metech.EF.Data.edmx.Data.Context.tt;
-using Tín_Phát_Metech.EF.Data.edmx.Data.tt;
+using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
@@ -13,7 +12,7 @@ namespace Tín_Phát_Metech.Model
         TinPhatEntities db = new TinPhatEntities();
         public User getItem(string ID)
         {
-            return db.User.FirstOrDefault(x => x.Ma_User == ID);
+            return db.User.FirstOrDefault(x => x.MaTK == ID);
         }
         public List<User> getList()
         {
@@ -36,11 +35,11 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _User = db.User.FirstOrDefault(x => x.Ma_User == User.Ma_User);
-                _User.User1 = User.User1;
-                _User.Pass = User.Pass;
-                _User.Ma_NV = User.Ma_NV;
-                _User.Permision = User.Permision;
+                var _User = db.User.FirstOrDefault(x => x.MaTK == User.MaTK);
+                _User.TK = User.TK;
+                _User.MK = User.MK;
+                _User.MaNV = User.MaNV;
+                _User.Quyen = User.Quyen;
                 db.SaveChanges();
                 return User;
             }
@@ -53,7 +52,7 @@ namespace Tín_Phát_Metech.Model
         {
             try
             {
-                var _User = db.User.FirstOrDefault(x => x.Ma_User == id);
+                var _User = db.User.FirstOrDefault(x => x.MaTK == id);
                 db.User.Remove(_User);
                 db.SaveChanges();
                 return _User;
