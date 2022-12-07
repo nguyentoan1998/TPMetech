@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ae4349ed4e734d6a93d72b79b691a058" Name="Diagram1">
+        <EntityTypeShape EntityType="TinPhatModel.KH" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TinPhatModel.NCC" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TinPhatModel.NV" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TinPhatModel.User" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TinPhatModel.To" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="TinPhatModel.Chucvu" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="TinPhatModel.BTP" Width="1.5" PointX="3.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TinPhatModel.DongiaSP" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TinPhatModel.DVCD" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TinPhatModel.MaQC" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TinPhatModel.NVL" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TinPhatModel.THSP" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TinPhatModel.TP" Width="1.5" PointX="9.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

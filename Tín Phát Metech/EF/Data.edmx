@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TinPhatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BTP">
+          <Key>
+            <PropertyRef Name="Ma_BTP" />
+          </Key>
+          <Property Name="Ma_BTP" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_BTP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DVT_BTP" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SLMin_BTP" Type="smallint" />
+          <Property Name="Ma_Kho" Type="nchar" MaxLength="10" />
+          <Property Name="TKCP_BTP" Type="tinyint" />
+          <Property Name="Gia_BTP" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Note_BTP" Type="nvarchar(max)" />
+          <Property Name="Image_BTP" Type="image" />
+        </EntityType>
+        <EntityType Name="Chucvu">
+          <Key>
+            <PropertyRef Name="Ma_CV" />
+          </Key>
+          <Property Name="Ma_CV" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_CV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Note_CV" Type="nvarchar" MaxLength="50" />
+          <Property Name="Theodoi_CV" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DongiaSP">
+          <Key>
+            <PropertyRef Name="Ma_DG" />
+          </Key>
+          <Property Name="Ma_DG" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ma_SP" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_SP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DVT" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SL" Type="smallint" Nullable="false" />
+          <Property Name="Gia" Type="smallint" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DVCD">
+          <Key>
+            <PropertyRef Name="Ma_DVCD" />
+          </Key>
+          <Property Name="Ma_DVCD" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_DVCD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tyle_DVCD" Type="tinyint" Nullable="false" />
+          <Property Name="Note_DVCD" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KH">
+          <Key>
+            <PropertyRef Name="Ma_KH" />
+          </Key>
+          <Property Name="Ma_KH" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_KH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Diachi_KH" Type="nvarchar(max)" />
+          <Property Name="Note_KH" Type="nvarchar(max)" />
+          <Property Name="Is_NCC" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaQC">
+          <Key>
+            <PropertyRef Name="Ma_QC" />
+          </Key>
+          <Property Name="Ma_QC" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_QC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Trung_QC" Type="bit" Nullable="false" />
+          <Property Name="Theodoi_QC" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NCC">
+          <Key>
+            <PropertyRef Name="Ma_NCC" />
+          </Key>
+          <Property Name="Ma_NCC" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_NCC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Diachi_NCC" Type="nvarchar(max)" />
+          <Property Name="Note_NCC" Type="nvarchar(max)" />
+          <Property Name="Is_KH" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NV">
+          <Key>
+            <PropertyRef Name="Ma_NV" />
+          </Key>
+          <Property Name="Ma_NV" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Image_NV" Type="image" Nullable="false" />
+          <Property Name="Ma_To" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ma_User" Type="nchar" MaxLength="10" />
+          <Property Name="Ten_NV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gioitinh_NV" Type="bit" Nullable="false" />
+          <Property Name="Diachi_NV" Type="nvarchar(max)" />
+          <Property Name="SDT_NV" Type="int" />
+          <Property Name="CMT_NV" Type="int" />
+          <Property Name="Creat_Date" Type="date" Nullable="false" />
+          <Property Name="By_Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NVL">
+          <Key>
+            <PropertyRef Name="Ma_NL" />
+          </Key>
+          <Property Name="Ma_NL" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_NL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DVT_NL" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SLMin_NL" Type="smallint" />
+          <Property Name="Ma_Kho" Type="nchar" MaxLength="10" />
+          <Property Name="TKCP_NL" Type="tinyint" />
+          <Property Name="Gia_NL" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Note_NL" Type="nvarchar(max)" />
+          <Property Name="Image_NL" Type="image" />
+        </EntityType>
+        <EntityType Name="THSP">
+          <Key>
+            <PropertyRef Name="Ma_THSP" />
+          </Key>
+          <Property Name="Date_THSP" Type="tinyint" Nullable="false" />
+          <Property Name="Ma_THSP" Type="numeric" Precision="3" Scale="1" Nullable="false" />
+          <Property Name="Ma_Kho" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DVT" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SL" Type="smallint" Nullable="false" />
+          <Property Name="Gia" Type="smallint" Nullable="false" />
+          <Property Name="Tien" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="Ma_NV" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="To">
+          <Key>
+            <PropertyRef Name="Ma_To" />
+          </Key>
+          <Property Name="Ma_To" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_To" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Note_To" Type="nvarchar" MaxLength="50" />
+          <Property Name="Theodoi_To" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TinPhat.dbo.TP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TP">
+          <Key>
+            <PropertyRef Name="Ma_TP" />
+            <PropertyRef Name="Ten_TP" />
+            <PropertyRef Name="DVT_TP" />
+          </Key>
+          <Property Name="Ma_TP" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_TP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DVT_TP" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ma_Kho" Type="nchar" MaxLength="10" />
+          <Property Name="TKDT_TP" Type="tinyint" />
+          <Property Name="Gia_TP" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Note_TP" Type="nvarchar(max)" />
+          <Property Name="Image_TP" Type="image" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Ma_User" />
+          </Key>
+          <Property Name="Ma_User" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ma_NV" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Permision" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Creat_Date" Type="date" Nullable="false" />
+          <Property Name="By_Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TinPhatModelStoreContainer">
+          <EntitySet Name="BTP" EntityType="Self.BTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chucvu" EntityType="Self.Chucvu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DongiaSP" EntityType="Self.DongiaSP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DVCD" EntityType="Self.DVCD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KH" EntityType="Self.KH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaQC" EntityType="Self.MaQC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NCC" EntityType="Self.NCC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NVL" EntityType="Self.NVL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THSP" EntityType="Self.THSP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="To" EntityType="Self.To" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TP" EntityType="Self.TP" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TP].[Ma_TP] AS [Ma_TP], 
+    [TP].[Ten_TP] AS [Ten_TP], 
+    [TP].[DVT_TP] AS [DVT_TP], 
+    [TP].[Ma_Kho] AS [Ma_Kho], 
+    [TP].[TKDT_TP] AS [TKDT_TP], 
+    [TP].[Gia_TP] AS [Gia_TP], 
+    [TP].[Note_TP] AS [Note_TP], 
+    [TP].[Image_TP] AS [Image_TP]
+    FROM [dbo].[TP] AS [TP]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TinPhatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KH">
+          <Key>
+            <PropertyRef Name="Ma_KH" />
+          </Key>
+          <Property Name="Ma_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ten_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Diachi_KH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Note_KH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Is_NCC" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NCC">
+          <Key>
+            <PropertyRef Name="Ma_NCC" />
+          </Key>
+          <Property Name="Ma_NCC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ten_NCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Diachi_NCC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Note_NCC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Is_KH" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NV">
+          <Key>
+            <PropertyRef Name="Ma_NV" />
+          </Key>
+          <Property Name="Ma_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Image_NV" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Ma_To" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ma_User" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gioitinh_NV" Type="Boolean" Nullable="false" />
+          <Property Name="Diachi_NV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SDT_NV" Type="Int32" />
+          <Property Name="CMT_NV" Type="Int32" />
+          <Property Name="Creat_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="By_Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Ma_User" />
+          </Key>
+          <Property Name="Ma_User" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ma_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Permision" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Creat_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="By_Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="TinPhatEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KH" EntityType="Self.KH" />
+          <EntitySet Name="NCC" EntityType="Self.NCC" />
+          <EntitySet Name="NV" EntityType="Self.NV" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="To" EntityType="TinPhatModel.To" />
+          <EntitySet Name="Chucvu" EntityType="TinPhatModel.Chucvu" />
+          <EntitySet Name="BTP" EntityType="TinPhatModel.BTP" />
+          <EntitySet Name="DongiaSP" EntityType="TinPhatModel.DongiaSP" />
+          <EntitySet Name="DVCD" EntityType="TinPhatModel.DVCD" />
+          <EntitySet Name="MaQC" EntityType="TinPhatModel.MaQC" />
+          <EntitySet Name="NVL" EntityType="TinPhatModel.NVL" />
+          <EntitySet Name="THSP" EntityType="TinPhatModel.THSP" />
+          <EntitySet Name="TP" EntityType="TinPhatModel.TP" />
+        </EntityContainer>
+        <EntityType Name="To">
+          <Key>
+            <PropertyRef Name="Ma_To" />
+          </Key>
+          <Property Name="Ma_To" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_To" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note_To" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Theodoi_To" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Chucvu">
+          <Key>
+            <PropertyRef Name="Ma_CV" />
+          </Key>
+          <Property Name="Ma_CV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_CV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note_CV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Theodoi_CV" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BTP">
+          <Key>
+            <PropertyRef Name="Ma_BTP" />
+          </Key>
+          <Property Name="Ma_BTP" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_BTP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVT_BTP" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SLMin_BTP" Type="Int16" />
+          <Property Name="Ma_Kho" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TKCP_BTP" Type="Byte" />
+          <Property Name="Gia_BTP" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Note_BTP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_BTP" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DongiaSP">
+          <Key>
+            <PropertyRef Name="Ma_DG" />
+          </Key>
+          <Property Name="Ma_DG" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ma_SP" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_SP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVT" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SL" Type="Int16" Nullable="false" />
+          <Property Name="Gia" Type="Int16" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DVCD">
+          <Key>
+            <PropertyRef Name="Ma_DVCD" />
+          </Key>
+          <Property Name="Ma_DVCD" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_DVCD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tyle_DVCD" Type="Byte" Nullable="false" />
+          <Property Name="Note_DVCD" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaQC">
+          <Key>
+            <PropertyRef Name="Ma_QC" />
+          </Key>
+          <Property Name="Ma_QC" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_QC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trung_QC" Type="Boolean" Nullable="false" />
+          <Property Name="Theodoi_QC" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NVL">
+          <Key>
+            <PropertyRef Name="Ma_NL" />
+          </Key>
+          <Property Name="Ma_NL" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_NL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVT_NL" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SLMin_NL" Type="Int16" />
+          <Property Name="Ma_Kho" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TKCP_NL" Type="Byte" />
+          <Property Name="Gia_NL" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Note_NL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_NL" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="THSP">
+          <Key>
+            <PropertyRef Name="Date_THSP" />
+            <PropertyRef Name="Ma_THSP" />
+          </Key>
+          <Property Name="Date_THSP" Type="Byte" Nullable="false" />
+          <Property Name="Ma_THSP" Type="Decimal" Nullable="false" Precision="3" Scale="1" />
+          <Property Name="Ma_Kho" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TenSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVT" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SL" Type="Int16" Nullable="false" />
+          <Property Name="Gia" Type="Int16" Nullable="false" />
+          <Property Name="Tien" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+          <Property Name="Ma_NV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TP">
+          <Key>
+            <PropertyRef Name="Ma_TP" />
+            <PropertyRef Name="Ten_TP" />
+            <PropertyRef Name="DVT_TP" />
+          </Key>
+          <Property Name="Ma_TP" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ten_TP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVT_TP" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ma_Kho" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TKDT_TP" Type="Byte" />
+          <Property Name="Gia_TP" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Note_TP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_TP" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TinPhatModelStoreContainer" CdmEntityContainer="TinPhatEntities">
+          <EntitySetMapping Name="KH">
+            <EntityTypeMapping TypeName="TinPhatModel.KH">
+              <MappingFragment StoreEntitySet="KH">
+                <ScalarProperty Name="Ma_KH" ColumnName="Ma_KH" />
+                <ScalarProperty Name="Ten_KH" ColumnName="Ten_KH" />
+                <ScalarProperty Name="Diachi_KH" ColumnName="Diachi_KH" />
+                <ScalarProperty Name="Note_KH" ColumnName="Note_KH" />
+                <ScalarProperty Name="Is_NCC" ColumnName="Is_NCC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NCC">
+            <EntityTypeMapping TypeName="TinPhatModel.NCC">
+              <MappingFragment StoreEntitySet="NCC">
+                <ScalarProperty Name="Ma_NCC" ColumnName="Ma_NCC" />
+                <ScalarProperty Name="Ten_NCC" ColumnName="Ten_NCC" />
+                <ScalarProperty Name="Diachi_NCC" ColumnName="Diachi_NCC" />
+                <ScalarProperty Name="Note_NCC" ColumnName="Note_NCC" />
+                <ScalarProperty Name="Is_KH" ColumnName="Is_KH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NV">
+            <EntityTypeMapping TypeName="TinPhatModel.NV">
+              <MappingFragment StoreEntitySet="NV">
+                <ScalarProperty Name="By_Date" ColumnName="By_Date" />
+                <ScalarProperty Name="Creat_Date" ColumnName="Creat_Date" />
+                <ScalarProperty Name="Ma_NV" ColumnName="Ma_NV" />
+                <ScalarProperty Name="Image_NV" ColumnName="Image_NV" />
+                <ScalarProperty Name="Ma_To" ColumnName="Ma_To" />
+                <ScalarProperty Name="Ma_User" ColumnName="Ma_User" />
+                <ScalarProperty Name="Ten_NV" ColumnName="Ten_NV" />
+                <ScalarProperty Name="Gioitinh_NV" ColumnName="Gioitinh_NV" />
+                <ScalarProperty Name="Diachi_NV" ColumnName="Diachi_NV" />
+                <ScalarProperty Name="SDT_NV" ColumnName="SDT_NV" />
+                <ScalarProperty Name="CMT_NV" ColumnName="CMT_NV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="TinPhatModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="By_Date" ColumnName="By_Date" />
+                <ScalarProperty Name="Creat_Date" ColumnName="Creat_Date" />
+                <ScalarProperty Name="Ma_User" ColumnName="Ma_User" />
+                <ScalarProperty Name="Ma_NV" ColumnName="Ma_NV" />
+                <ScalarProperty Name="User1" ColumnName="User" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Permision" ColumnName="Permision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="To">
+            <EntityTypeMapping TypeName="TinPhatModel.To">
+              <MappingFragment StoreEntitySet="To">
+                <ScalarProperty Name="Theodoi_To" ColumnName="Theodoi_To" />
+                <ScalarProperty Name="Note_To" ColumnName="Note_To" />
+                <ScalarProperty Name="Ten_To" ColumnName="Ten_To" />
+                <ScalarProperty Name="Ma_To" ColumnName="Ma_To" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chucvu">
+            <EntityTypeMapping TypeName="TinPhatModel.Chucvu">
+              <MappingFragment StoreEntitySet="Chucvu">
+                <ScalarProperty Name="Theodoi_CV" ColumnName="Theodoi_CV" />
+                <ScalarProperty Name="Note_CV" ColumnName="Note_CV" />
+                <ScalarProperty Name="Ten_CV" ColumnName="Ten_CV" />
+                <ScalarProperty Name="Ma_CV" ColumnName="Ma_CV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BTP">
+            <EntityTypeMapping TypeName="TinPhatModel.BTP">
+              <MappingFragment StoreEntitySet="BTP">
+                <ScalarProperty Name="Image_BTP" ColumnName="Image_BTP" />
+                <ScalarProperty Name="Note_BTP" ColumnName="Note_BTP" />
+                <ScalarProperty Name="Gia_BTP" ColumnName="Gia_BTP" />
+                <ScalarProperty Name="TKCP_BTP" ColumnName="TKCP_BTP" />
+                <ScalarProperty Name="Ma_Kho" ColumnName="Ma_Kho" />
+                <ScalarProperty Name="SLMin_BTP" ColumnName="SLMin_BTP" />
+                <ScalarProperty Name="DVT_BTP" ColumnName="DVT_BTP" />
+                <ScalarProperty Name="Ten_BTP" ColumnName="Ten_BTP" />
+                <ScalarProperty Name="Ma_BTP" ColumnName="Ma_BTP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DongiaSP">
+            <EntityTypeMapping TypeName="TinPhatModel.DongiaSP">
+              <MappingFragment StoreEntitySet="DongiaSP">
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+                <ScalarProperty Name="Ten_SP" ColumnName="Ten_SP" />
+                <ScalarProperty Name="Ma_SP" ColumnName="Ma_SP" />
+                <ScalarProperty Name="Ma_DG" ColumnName="Ma_DG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DVCD">
+            <EntityTypeMapping TypeName="TinPhatModel.DVCD">
+              <MappingFragment StoreEntitySet="DVCD">
+                <ScalarProperty Name="Note_DVCD" ColumnName="Note_DVCD" />
+                <ScalarProperty Name="Tyle_DVCD" ColumnName="Tyle_DVCD" />
+                <ScalarProperty Name="Ten_DVCD" ColumnName="Ten_DVCD" />
+                <ScalarProperty Name="Ma_DVCD" ColumnName="Ma_DVCD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaQC">
+            <EntityTypeMapping TypeName="TinPhatModel.MaQC">
+              <MappingFragment StoreEntitySet="MaQC">
+                <ScalarProperty Name="Theodoi_QC" ColumnName="Theodoi_QC" />
+                <ScalarProperty Name="Trung_QC" ColumnName="Trung_QC" />
+                <ScalarProperty Name="Ten_QC" ColumnName="Ten_QC" />
+                <ScalarProperty Name="Ma_QC" ColumnName="Ma_QC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NVL">
+            <EntityTypeMapping TypeName="TinPhatModel.NVL">
+              <MappingFragment StoreEntitySet="NVL">
+                <ScalarProperty Name="Image_NL" ColumnName="Image_NL" />
+                <ScalarProperty Name="Note_NL" ColumnName="Note_NL" />
+                <ScalarProperty Name="Gia_NL" ColumnName="Gia_NL" />
+                <ScalarProperty Name="TKCP_NL" ColumnName="TKCP_NL" />
+                <ScalarProperty Name="Ma_Kho" ColumnName="Ma_Kho" />
+                <ScalarProperty Name="SLMin_NL" ColumnName="SLMin_NL" />
+                <ScalarProperty Name="DVT_NL" ColumnName="DVT_NL" />
+                <ScalarProperty Name="Ten_NL" ColumnName="Ten_NL" />
+                <ScalarProperty Name="Ma_NL" ColumnName="Ma_NL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THSP">
+            <EntityTypeMapping TypeName="TinPhatModel.THSP">
+              <MappingFragment StoreEntitySet="THSP">
+                <ScalarProperty Name="Ma_THSP" ColumnName="Ma_THSP" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Ma_NV" ColumnName="Ma_NV" />
+                <ScalarProperty Name="Tien" ColumnName="Tien" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="Ma_Kho" ColumnName="Ma_Kho" />
+                <ScalarProperty Name="Date_THSP" ColumnName="Date_THSP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TP">
+            <EntityTypeMapping TypeName="TinPhatModel.TP">
+              <MappingFragment StoreEntitySet="TP">
+                <ScalarProperty Name="Image_TP" ColumnName="Image_TP" />
+                <ScalarProperty Name="Note_TP" ColumnName="Note_TP" />
+                <ScalarProperty Name="Gia_TP" ColumnName="Gia_TP" />
+                <ScalarProperty Name="TKDT_TP" ColumnName="TKDT_TP" />
+                <ScalarProperty Name="Ma_Kho" ColumnName="Ma_Kho" />
+                <ScalarProperty Name="DVT_TP" ColumnName="DVT_TP" />
+                <ScalarProperty Name="Ten_TP" ColumnName="Ten_TP" />
+                <ScalarProperty Name="Ma_TP" ColumnName="Ma_TP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
