@@ -16,5 +16,10 @@ namespace Tín_Phát_Metech
         {
             InitializeComponent();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

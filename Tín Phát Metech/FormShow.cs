@@ -138,27 +138,25 @@ namespace Tín_Phát_Metech
                 To to = new To();
                 try
                 {
-                    to.Note_To = gridVShow.GetRowCellValue(row, "Note_To").ToString();
+                    to.Note = gridVShow.GetRowCellValue(row, "Note_To").ToString();
                 }
                 catch
                 {
-                    to.Note_To = "";
+                    to.Note = "";
 
                 }
                 finally
                 {
-                    to.Ma_To = gridVShow.GetRowCellValue(row, "Ma_To").ToString();
-                    to.Ten_To = gridVShow.GetRowCellValue(row, "Ten_To").ToString();
-                    to.Theodoi_To = bool.Parse(gridVShow.GetRowCellValue(row, "Theodoi_To").ToString());
+                    to.MaTo = gridVShow.GetRowCellValue(row, "Ma_To").ToString();
+                    to.TenTo = gridVShow.GetRowCellValue(row, "Ten_To").ToString();
                     tbl_To.add(to);
                 }
             }
             else
             {
                 To to = tbl_To.getItem(gridVShow.GetFocusedRowCellValue("Ma_To").ToString());
-                to.Ten_To = gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Ten_To").ToString();
-                to.Note_To = gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Note_To").ToString();
-                to.Theodoi_To = bool.Parse(gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Theodoi_To").ToString());
+                to.TenTo = gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Ten_To").ToString();
+                to.Note = gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Note_To").ToString();
                 tbl_To.update(to);
             }
         }

@@ -15,7 +15,7 @@ namespace Tín_Phát_Metech
         [STAThread]
         static void Main()
         {
-            DevExpress.UserSkins.BonusSkins.Register();
+            //DevExpress.UserSkins.BonusSkins.Register();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainView());
