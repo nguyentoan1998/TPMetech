@@ -7,9 +7,18 @@ using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
-    public class tbl_DongiaSP
+    class tbl_Dongia
     {
         TinPhatEntities db = new TinPhatEntities();
+        private static tbl_Dongia instance;
+
+        public static tbl_Dongia Instance
+        {
+            get { if (instance == null) instance = new tbl_Dongia(); return tbl_Dongia.instance; }
+            private set { tbl_Dongia.instance = value; }
+        }
+
+        private tbl_Dongia() { }
         public Dongia getItem(string ID)
         {
             return db.Dongia.FirstOrDefault(x => x.MaDG == ID);

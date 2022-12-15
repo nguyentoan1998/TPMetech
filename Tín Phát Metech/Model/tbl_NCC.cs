@@ -10,6 +10,15 @@ namespace Tín_Phát_Metech.Model
     class tbl_NCC
     {
         TinPhatEntities db = new TinPhatEntities();
+        private static tbl_NCC instance;
+
+        public static tbl_NCC Instance
+        {
+            get { if (instance == null) instance = new tbl_NCC(); return tbl_NCC.instance; }
+            private set { tbl_NCC.instance = value; }
+        }
+
+        private tbl_NCC() { }
         public NCC getItem(string ID)
         {
             return db.NCC.FirstOrDefault(x => x.MaNCC == ID);

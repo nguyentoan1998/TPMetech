@@ -7,31 +7,31 @@ using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
-    class tbl_Chucvu
+    class tbl_Kyhieucong
     {
         TinPhatEntities db = new TinPhatEntities();
-        private static tbl_Chucvu instance;
+        private static tbl_Kyhieucong instance;
 
-        public static tbl_Chucvu Instance
+        public static tbl_Kyhieucong Instance
         {
-            get { if (instance == null) instance = new tbl_Chucvu(); return tbl_Chucvu.instance; }
-            private set { tbl_Chucvu.instance = value; }
+            get { if (instance == null) instance = new tbl_Kyhieucong(); return tbl_Kyhieucong.instance; }
+            private set { tbl_Kyhieucong.instance = value; }
         }
 
-        private tbl_Chucvu() { }
-        public Chucvu getItem(string ID)
+        private tbl_Kyhieucong() { }
+        public Kyhieucong getItem(string ID)
         {
-            return db.Chucvu.FirstOrDefault(x => x.MaCV == ID);
+            return db.Kyhieucong.FirstOrDefault(x => x.MaKyhieu == ID);
         }
-        public List<Chucvu> getList()
+        public List<Kyhieucong> getList()
         {
-            return db.Chucvu.ToList();
+            return db.Kyhieucong.ToList();
         }
-        public Chucvu add(Chucvu Chucvu)
+        public Kyhieucong add(Kyhieucong Chucvu)
         {
             try
             {
-                db.Chucvu.Add(Chucvu);
+                db.Kyhieucong.Add(Chucvu);
                 db.SaveChanges();
                 return Chucvu;
             }
@@ -40,13 +40,14 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public Chucvu update(Chucvu Chucvu)
+        public Kyhieucong update(Kyhieucong Chucvu)
         {
             try
-            { 
-                var _Chucvu = db.Chucvu.FirstOrDefault(x => x.MaCV== Chucvu.MaCV);
-                _Chucvu.TenCV = Chucvu.TenCV;
+            {
+                var _Chucvu = db.Kyhieucong.FirstOrDefault(x => x.MaKyhieu == Chucvu.MaKyhieu);
+                _Chucvu.Dgiai = Chucvu.Dgiai;
                 _Chucvu.Note = Chucvu.Note;
+                _Chucvu.Kyhieu = Chucvu.Kyhieu;
                 db.SaveChanges();
                 return Chucvu;
             }
@@ -55,12 +56,12 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public Chucvu delete(string id)
+        public Kyhieucong delete(string id)
         {
             try
             {
-                var _Chucvu = db.Chucvu.FirstOrDefault(x => x.MaCV == id);
-                db.Chucvu.Remove(_Chucvu);
+                var _Chucvu = db.Kyhieucong.FirstOrDefault(x => x.MaKyhieu == id);
+                db.Kyhieucong.Remove(_Chucvu);
                 db.SaveChanges();
                 return _Chucvu;
             }

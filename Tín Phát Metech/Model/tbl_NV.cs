@@ -10,6 +10,15 @@ namespace Tín_Phát_Metech.Model
     class tbl_NV
     {
         TinPhatEntities db = new TinPhatEntities();
+        private static tbl_NV instance;
+
+        public static tbl_NV Instance
+        {
+            get { if (instance == null) instance = new tbl_NV(); return tbl_NV.instance; }
+            private set { tbl_NV.instance = value; }
+        }
+
+        private tbl_NV() { }
         public Nhanvien getItem(string ID)
         {
             return db.Nhanvien.FirstOrDefault(x => x.MaNV == ID);

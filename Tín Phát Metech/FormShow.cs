@@ -21,11 +21,6 @@ namespace Tín_Phát_Metech
         private bool _them = false;
         private int rowdelete;
         TinPhatEntities db = new TinPhatEntities();
-        tbl_To tbl_To = new tbl_To();
-        tbl_NV tbl_Nv = new tbl_NV();
-        tbl_Chucvu tbl_Chucvu = new tbl_Chucvu();
-        tbl_KH tbl_Kh = new tbl_KH();
-        tbl_NCC tbl_Ncc = new tbl_NCC();
         private string _message;
         private bool _edit;
         #endregion
@@ -51,20 +46,50 @@ namespace Tín_Phát_Metech
             switch (this.Text)
             {
                 case "Cơ cấu Tổ":
-                    gridCtrlShow.DataSource = new BindingSource(tbl_To.getList(), null);
+                    gridCtrlShow.DataSource = new BindingSource(tbl_To.Instance.getList(), null);
                     break;
                 case "Chức vụ":
-                    gridCtrlShow.DataSource = new BindingSource(tbl_Chucvu.getList(), null);
+                    gridCtrlShow.DataSource = new BindingSource(tbl_Chucvu.Instance.getList(), null);
                     break;
                 case "Khách hàng":
-                    gridCtrlShow.DataSource = new BindingSource(tbl_Kh.getList(), null);
+                    gridCtrlShow.DataSource = new BindingSource(tbl_KH.Instance.getList(), null);
                     break;
                 case "Nhà cung cấp":
-                    gridCtrlShow.DataSource = new BindingSource(tbl_Ncc.getList(), null);
+                    gridCtrlShow.DataSource = new BindingSource(tbl_NCC.Instance.getList(), null);
                     break;
                 case "Nhân viên":
-                    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                    gridCtrlShow.DataSource = new BindingSource(tbl_NV.Instance.getList(), null);
                     break;
+                case "Đơn giá sản phẩm":
+                    gridCtrlShow.DataSource = new BindingSource(tbl_Dongia.Instance.getList(), null);
+                    break;
+                case "Ký hiệu chấm công":
+                    gridCtrlShow.DataSource = new BindingSource(tbl_Kyhieucong.Instance.getList(), null);
+                    break;
+                //case "Nguyên vật liệu":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Bán thành phẩm":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Thành phẩm":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Đơn giá thành phẩm":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Đơn vị tính":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Chấm công":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Tổng hợp sản phẩm":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
+                //case "Tổng hợp sản phẩm từng người":
+                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                //    break;
             }
             if (_edit == false)
             {
@@ -103,7 +128,7 @@ namespace Tín_Phát_Metech
             if (gridVShow.FocusedRowHandle >= 0)
             {
                 if (XtraMessageBox.Show("Bạn thật sự muốn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    tbl_To.delete(gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Ma_To").ToString());
+                    tbl_To.Instance.delete(gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Ma_To").ToString());
                 gridVShow.DeleteRow(gridVShow.FocusedRowHandle);
             }   
         }
@@ -149,15 +174,15 @@ namespace Tín_Phát_Metech
                 {
                     to.MaTo = gridVShow.GetRowCellValue(row, "Ma_To").ToString();
                     to.TenTo = gridVShow.GetRowCellValue(row, "Ten_To").ToString();
-                    tbl_To.add(to);
+                    tbl_To.Instance.add(to);
                 }
             }
             else
             {
-                To to = tbl_To.getItem(gridVShow.GetFocusedRowCellValue("Ma_To").ToString());
+                To to = tbl_To.Instance.getItem(gridVShow.GetFocusedRowCellValue("Ma_To").ToString());
                 to.TenTo = gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Ten_To").ToString();
                 to.Note = gridVShow.GetRowCellValue(gridVShow.FocusedRowHandle, "Note_To").ToString();
-                tbl_To.update(to);
+                tbl_To.Instance.update(to);
             }
         }
         private void gridVShow_RowDeleting(object sender, DevExpress.Data.RowDeletingEventArgs e)

@@ -224,6 +224,11 @@ namespace Tín_Phát_Metech
         {
 
         }
+        private void btnTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormShow show = new FormShow(btnTK.Caption, true);
+            KiemtraForm(show, btnTK.Caption);
+        }
         #endregion
     }
 }

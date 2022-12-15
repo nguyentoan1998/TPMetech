@@ -7,9 +7,18 @@ using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
-    public class tbl_THSP
+    class tbl_THSP
     {
         TinPhatEntities db = new TinPhatEntities();
+        private static tbl_THSP instance;
+
+        public static tbl_THSP Instance
+        {
+            get { if (instance == null) instance = new tbl_THSP(); return tbl_THSP.instance; }
+            private set { tbl_THSP.instance = value; }
+        }
+
+        private tbl_THSP() { }
         public THSP getItem(string ID)
         {
             return db.THSP.FirstOrDefault(x => x.MaTHSP == ID);

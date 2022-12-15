@@ -253,13 +253,21 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Model\tbl_BTP.cs" />
+    <Compile Include="Model\tbl_Chamcong.cs" />
     <Compile Include="Model\tbl_Chucvu.cs" />
     <Compile Include="Model\tbl_DongiaSP.cs" />
+    <Compile Include="Model\tbl_DongiaTP.cs" />
+    <Compile Include="Model\tbl_DVT.cs" />
     <Compile Include="Model\tbl_KH.cs" />
+    <Compile Include="Model\tbl_Kyhieucong.cs" />
+    <Compile Include="Model\tbl_Luong.cs" />
     <Compile Include="Model\tbl_NCC.cs" />
     <Compile Include="Model\tbl_NV.cs" />
+    <Compile Include="Model\tbl_NVL.cs" />
     <Compile Include="Model\tbl_THSP.cs" />
     <Compile Include="Model\tbl_To.cs" />
+    <Compile Include="Model\tbl_TP.cs" />
     <Compile Include="Model\tbl_User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,6 +280,7 @@
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -321,7 +330,6 @@
       <DependentUpon>Data.edmx</DependentUpon>
       <LastGenOutput>Data.cs</LastGenOutput>
     </Content>
-    <Content Include="Icon.ico" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -117,6 +117,9 @@
             this.barListItem1 = new DevExpress.XtraBars.BarListItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTK = new DevExpress.XtraBars.BarButtonItem();
             this.rbDoanhmuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbgTaikhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbgCocau = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -135,7 +138,6 @@
             // mvvmContext1
             // 
             this.mvvmContext1.ContainerControl = this;
-            this.mvvmContext1.ViewModelType = typeof(Tín_Phát_Metech.MainViewModel);
             // 
             // ribbonPage2
             // 
@@ -710,10 +712,13 @@
             this.barButtonItem1,
             this.barListItem1,
             this.ribbonGalleryBarItem1,
-            this.barSubItem1});
+            this.barSubItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.btnTK});
             this.Mainmenu.Location = new System.Drawing.Point(0, 0);
             this.Mainmenu.Margin = new System.Windows.Forms.Padding(4);
-            this.Mainmenu.MaxItemId = 95;
+            this.Mainmenu.MaxItemId = 98;
             this.Mainmenu.Name = "Mainmenu";
             this.Mainmenu.PageHeaderItemLinks.Add(this.barSubItem1);
             this.Mainmenu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -729,7 +734,7 @@
             this.rbDoanhmuc,
             this.rbHethong});
             this.Mainmenu.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.Mainmenu.Size = new System.Drawing.Size(915, 158);
+            this.Mainmenu.Size = new System.Drawing.Size(1037, 158);
             this.Mainmenu.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // btnTo
@@ -911,6 +916,28 @@
             this.barSubItem1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Id = 95;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Tài khoản";
+            this.barButtonItem3.Id = 96;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btnTK
+            // 
+            this.btnTK.Caption = "Tài khoản ngầm định";
+            this.btnTK.Id = 97;
+            this.btnTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnTK.Name = "btnTK";
+            this.btnTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTK_ItemClick);
+            // 
             // rbDoanhmuc
             // 
             this.rbDoanhmuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -924,6 +951,8 @@
             // 
             // rbgTaikhoan
             // 
+            this.rbgTaikhoan.ItemLinks.Add(this.barButtonItem2);
+            this.rbgTaikhoan.ItemLinks.Add(this.btnTK);
             this.rbgTaikhoan.Name = "rbgTaikhoan";
             this.rbgTaikhoan.Text = "Tài khoản";
             // 
@@ -973,7 +1002,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 526);
+            this.ClientSize = new System.Drawing.Size(1037, 526);
             this.Controls.Add(this.Mainmenu);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MainView.IconOptions.Image")));
@@ -1092,6 +1121,9 @@
         private DevExpress.XtraBars.BarListItem barListItem1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnTK;
     }
 }
 

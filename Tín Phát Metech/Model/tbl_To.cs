@@ -10,6 +10,15 @@ namespace Tín_Phát_Metech.Model
     public class tbl_To
     {
         TinPhatEntities db = new TinPhatEntities();
+        private static tbl_To instance;
+
+        public static tbl_To Instance
+        {
+            get { if (instance == null) instance = new tbl_To(); return tbl_To.instance; }
+            private set { tbl_To.instance = value; }
+        }
+
+        private tbl_To() { }
         public To getItem(string ID)
         {
             return db.To.FirstOrDefault(x => x.MaTo == ID);
