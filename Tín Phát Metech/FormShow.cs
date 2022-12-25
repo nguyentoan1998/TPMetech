@@ -84,12 +84,12 @@ namespace Tín_Phát_Metech
                 //case "Chấm công":
                 //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
                 //    break;
-                //case "Tổng hợp sản phẩm":
-                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
-                //    break;
-                //case "Tổng hợp sản phẩm từng người":
-                //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
-                //    break;
+                case "Tổng hợp Tổ Hàn":
+                    gridCtrlShow.DataSource = new BindingSource(tbl_THSP.Instance.getItemTo("Han"), null);
+                    break;
+                    //case "Tổng hợp sản phẩm từng người":
+                    //    gridCtrlShow.DataSource = new BindingSource(tbl_Nv.getList(), null);
+                    //    break;
             }
             if (_edit == false)
             {

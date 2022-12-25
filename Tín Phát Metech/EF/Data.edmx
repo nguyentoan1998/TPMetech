@@ -163,6 +163,7 @@
           <Property Name="MaDG" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Tien" Type="money" Nullable="false" />
           <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MaTo" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="To">
           <Key>
@@ -409,6 +410,7 @@
           <Property Name="MaDG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tien" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaTo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="To">
           <Key>
@@ -617,6 +619,7 @@
           <EntitySetMapping Name="THSP">
             <EntityTypeMapping TypeName="TinPhatModel.THSP">
               <MappingFragment StoreEntitySet="THSP">
+                <ScalarProperty Name="MaTo" ColumnName="MaTo" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="Tien" ColumnName="Tien" />
                 <ScalarProperty Name="MaDG" ColumnName="MaDG" />

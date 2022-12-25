@@ -23,6 +23,10 @@ namespace Tín_Phát_Metech.Model
         {
             return db.THSP.FirstOrDefault(x => x.MaTHSP == ID);
         }
+        public THSP getItemTo(string ID)
+        {
+            return db.THSP.FirstOrDefault(x => x.MaTo == ID);
+        }
         public List<THSP> getList()
         {
             return db.THSP.ToList();

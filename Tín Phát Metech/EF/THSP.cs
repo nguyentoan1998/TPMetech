@@ -42,6 +42,8 @@ public partial class THSP
 
     public string Note { get; set; }
 
+    public string MaTo { get; set; }
+
 }
 
 }
