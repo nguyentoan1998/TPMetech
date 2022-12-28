@@ -220,6 +220,9 @@
     <Compile Include="EF\THSP.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\THSPTN.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\To.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -266,6 +269,7 @@
     <Compile Include="Model\tbl_NV.cs" />
     <Compile Include="Model\tbl_NVL.cs" />
     <Compile Include="Model\tbl_THSP.cs" />
+    <Compile Include="Model\tbl_THSPTN.cs" />
     <Compile Include="Model\tbl_To.cs" />
     <Compile Include="Model\tbl_TP.cs" />
     <Compile Include="Model\tbl_User.cs" />

@@ -7,31 +7,35 @@ using Tín_Phát_Metech.EF;
 
 namespace Tín_Phát_Metech.Model
 {
-    class tbl_THSP
+    class tbl_THSPTN
     {
         TinPhatEntities db = new TinPhatEntities();
-        private static tbl_THSP instance;
+        private static tbl_THSPTN instance;
 
-        public static tbl_THSP Instance
+        public static tbl_THSPTN Instance
         {
-            get { if (instance == null) instance = new tbl_THSP(); return tbl_THSP.instance; }
-            private set { tbl_THSP.instance = value; }
+            get { if (instance == null) instance = new tbl_THSPTN(); return tbl_THSPTN.instance; }
+            private set { tbl_THSPTN.instance = value; }
         }
 
-        private tbl_THSP() { }
-        public THSP getItem(string ID)
+        private tbl_THSPTN() { }
+        public THSPTN getItem(string ID)
         {
-            return db.THSP.FirstOrDefault(x => x.MaTHSP == ID);
+            return db.THSPTN.FirstOrDefault(x => x.MaTHSPTN  == ID);
         }
-        public List<THSP> getList()
+        public THSPTN getItemTo(string ID)
         {
-            return db.THSP.ToList();
+            return db.THSPTN.FirstOrDefault(x => x.MaTo == ID);
         }
-        public THSP add(THSP to)
+        public List<THSPTN> getList()
+        {
+            return db.THSPTN.ToList();
+        }
+        public THSPTN add(THSPTN to)
         {
             try
             {
-                db.THSP.Add(to);
+                db.THSPTN.Add(to);
                 db.SaveChanges();
                 return to;
             }
@@ -40,16 +44,17 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public THSP update(THSP to)
+        public THSPTN update(THSPTN to)
         {
             try
             {
-                var _To = db.THSP.FirstOrDefault(x => x.MaTHSP == to.MaTHSP);
+                var _To = db.THSPTN.FirstOrDefault(x => x.MaTHSPTN == to.MaTHSPTN);
                 _To.Date = to.Date;
-                _To.MaBTP= to.MaBTP;
+                _To.MaBTP = to.MaBTP;
                 _To.MaDG = to.MaDG;
                 _To.MaDV = to.MaDV;
                 _To.MaKho = to.MaKho;
+                _To.MaNV = to.MaNV;
                 _To.MaTP = to.MaTP;
                 _To.MaVL = to.MaVL;
                 _To.Note = to.Note;
@@ -63,12 +68,12 @@ namespace Tín_Phát_Metech.Model
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu : " + e.Message);
             }
         }
-        public THSP delete(string id)
+        public THSPTN delete(string id)
         {
             try
             {
-                var _To = db.THSP.FirstOrDefault(x => x.MaTHSP == id);
-                db.THSP.Remove(_To);
+                var _To = db.THSPTN.FirstOrDefault(x => x.MaTHSPTN == id);
+                db.THSPTN.Remove(_To);
                 db.SaveChanges();
                 return _To;
             }

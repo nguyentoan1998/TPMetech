@@ -157,13 +157,36 @@
           <Property Name="MaVL" Type="nvarchar" MaxLength="50" />
           <Property Name="MaBTP" Type="nvarchar" MaxLength="50" />
           <Property Name="MaTP" Type="nvarchar" MaxLength="50" />
-          <Property Name="MaNV" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MaDV" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SL" Type="smallint" Nullable="false" />
           <Property Name="MaDG" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Tien" Type="money" Nullable="false" />
           <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MaTo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TinPhat.dbo.THSPTN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="THSPTN">
+          <Key>
+            <PropertyRef Name="MaTHSPTN" />
+            <PropertyRef Name="MaNV" />
+            <PropertyRef Name="SL" />
+            <PropertyRef Name="MaDG" />
+            <PropertyRef Name="Tien" />
+          </Key>
+          <Property Name="MaTHSPTN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="smallint" />
+          <Property Name="MaTo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaKho" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaVL" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaBTP" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaTP" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaDV" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaNV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SL" Type="smallint" Nullable="false" />
+          <Property Name="MaDG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tien" Type="money" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="To">
           <Key>
@@ -227,6 +250,23 @@
           <EntitySet Name="Tonkho" EntityType="Self.Tonkho" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TP" EntityType="Self.TP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THSPTN" EntityType="Self.THSPTN" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [THSPTN].[MaTHSPTN] AS [MaTHSPTN], 
+    [THSPTN].[Date] AS [Date], 
+    [THSPTN].[MaTo] AS [MaTo], 
+    [THSPTN].[MaKho] AS [MaKho], 
+    [THSPTN].[MaVL] AS [MaVL], 
+    [THSPTN].[MaBTP] AS [MaBTP], 
+    [THSPTN].[MaTP] AS [MaTP], 
+    [THSPTN].[MaDV] AS [MaDV], 
+    [THSPTN].[MaNV] AS [MaNV], 
+    [THSPTN].[SL] AS [SL], 
+    [THSPTN].[MaDG] AS [MaDG], 
+    [THSPTN].[Tien] AS [Tien], 
+    [THSPTN].[Note] AS [Note]
+    FROM [dbo].[THSPTN] AS [THSPTN]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -246,11 +286,12 @@
           <EntitySet Name="NVL" EntityType="TinPhatModel.NVL" />
           <EntitySet Name="NVLBTP" EntityType="TinPhatModel.NVLBTP" />
           <EntitySet Name="Quydoi" EntityType="TinPhatModel.Quydoi" />
-          <EntitySet Name="THSP" EntityType="TinPhatModel.THSP" />
           <EntitySet Name="To" EntityType="TinPhatModel.To" />
           <EntitySet Name="Tonkho" EntityType="TinPhatModel.Tonkho" />
           <EntitySet Name="TP" EntityType="TinPhatModel.TP" />
           <EntitySet Name="User" EntityType="TinPhatModel.User" />
+          <EntitySet Name="THSP" EntityType="TinPhatModel.THSP" />
+          <EntitySet Name="THSPTN" EntityType="TinPhatModel.THSPTN" />
         </EntityContainer>
         <EntityType Name="BTP">
           <Key>
@@ -394,24 +435,6 @@
           <Property Name="Tyle" Type="Int16" Nullable="false" />
           <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="THSP">
-          <Key>
-            <PropertyRef Name="MaTHSP" />
-          </Key>
-          <Property Name="MaTHSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="Int16" Nullable="false" />
-          <Property Name="MaKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaVL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaBTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SL" Type="Int16" Nullable="false" />
-          <Property Name="MaDG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Tien" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MaTo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="To">
           <Key>
             <PropertyRef Name="MaTo" />
@@ -454,6 +477,45 @@
           <Property Name="MK" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Quyen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CreatDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="THSP">
+          <Key>
+            <PropertyRef Name="MaTHSP" />
+          </Key>
+          <Property Name="MaTHSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="Int16" Nullable="false" />
+          <Property Name="MaKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaVL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaBTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SL" Type="Int16" Nullable="false" />
+          <Property Name="MaDG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tien" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaTo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="THSPTN">
+          <Key>
+            <PropertyRef Name="MaTHSPTN" />
+            <PropertyRef Name="MaNV" />
+            <PropertyRef Name="SL" />
+            <PropertyRef Name="MaDG" />
+            <PropertyRef Name="Tien" />
+          </Key>
+          <Property Name="MaTHSPTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="Int16" />
+          <Property Name="MaTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaVL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaBTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaDV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SL" Type="Int16" Nullable="false" />
+          <Property Name="MaDG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tien" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -616,25 +678,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="THSP">
-            <EntityTypeMapping TypeName="TinPhatModel.THSP">
-              <MappingFragment StoreEntitySet="THSP">
-                <ScalarProperty Name="MaTo" ColumnName="MaTo" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="Tien" ColumnName="Tien" />
-                <ScalarProperty Name="MaDG" ColumnName="MaDG" />
-                <ScalarProperty Name="SL" ColumnName="SL" />
-                <ScalarProperty Name="MaDV" ColumnName="MaDV" />
-                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-                <ScalarProperty Name="MaTP" ColumnName="MaTP" />
-                <ScalarProperty Name="MaBTP" ColumnName="MaBTP" />
-                <ScalarProperty Name="MaVL" ColumnName="MaVL" />
-                <ScalarProperty Name="MaKho" ColumnName="MaKho" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="MaTHSP" ColumnName="MaTHSP" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="To">
             <EntityTypeMapping TypeName="TinPhatModel.To">
               <MappingFragment StoreEntitySet="To">
@@ -679,6 +722,43 @@
                 <ScalarProperty Name="TK" ColumnName="TK" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THSP">
+            <EntityTypeMapping TypeName="TinPhatModel.THSP">
+              <MappingFragment StoreEntitySet="THSP">
+                <ScalarProperty Name="MaTo" ColumnName="MaTo" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Tien" ColumnName="Tien" />
+                <ScalarProperty Name="MaDG" ColumnName="MaDG" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+                <ScalarProperty Name="MaTP" ColumnName="MaTP" />
+                <ScalarProperty Name="MaBTP" ColumnName="MaBTP" />
+                <ScalarProperty Name="MaVL" ColumnName="MaVL" />
+                <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="MaTHSP" ColumnName="MaTHSP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THSPTN">
+            <EntityTypeMapping TypeName="TinPhatModel.THSPTN">
+              <MappingFragment StoreEntitySet="THSPTN">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Tien" ColumnName="Tien" />
+                <ScalarProperty Name="MaDG" ColumnName="MaDG" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+                <ScalarProperty Name="MaTP" ColumnName="MaTP" />
+                <ScalarProperty Name="MaBTP" ColumnName="MaBTP" />
+                <ScalarProperty Name="MaVL" ColumnName="MaVL" />
+                <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+                <ScalarProperty Name="MaTo" ColumnName="MaTo" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="MaTHSPTN" ColumnName="MaTHSPTN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

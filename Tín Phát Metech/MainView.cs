@@ -231,40 +231,16 @@ namespace Tín_Phát_Metech
         }
         #endregion
 
-        private void btnKhoancat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnTHSP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FormShow show = new FormShow("Tổng hợp - " + btnKhoancat.Caption, true);
-            KiemtraForm(show, "Tổng hợp - " + btnKhoancat.Caption);
+            FormShow show = new FormShow(btnTHSP.Caption, true);
+            KiemtraForm(show, btnTHSP.Caption);
         }
 
-        private void btnDotdap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnTHSPTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FormShow show = new FormShow("Tổng hợp - " + btnDotdap.Caption, true);
-            KiemtraForm(show, "Tổng hợp - " + btnDotdap.Caption);
-        }
-
-        private void btnHan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormShow show = new FormShow("Tổng hợp - " + btnHan.Caption, true);
-            KiemtraForm(show, "Tổng hợp - " + btnHan.Caption);
-        }
-
-        private void btnDanhbong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormShow show = new FormShow("Tổng hợp - " + btnDanhbong.Caption, true);
-            KiemtraForm(show, "Tổng hợp - " + btnDanhbong.Caption);
-        }
-
-        private void btnLaprap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormShow show = new FormShow("Tổng hợp - " + btnLaprap.Caption, true);
-            KiemtraForm(show, "Tổng hợp - " + btnLaprap.Caption);
-        }
-
-        private void btnGiacong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormShow show = new FormShow("Tổng hợp - " + btnGiacong.Caption, true);
-            KiemtraForm(show, "Tổng hợp - " + btnGiacong.Caption);
+            FormShow show = new FormShow(btnTHSPTN.Caption, true);
+            KiemtraForm(show, btnTHSPTN.Caption);
         }
     }
 }

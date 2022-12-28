@@ -58,8 +58,6 @@ public partial class TinPhatEntities : DbContext
 
     public virtual DbSet<Quydoi> Quydoi { get; set; }
 
-    public virtual DbSet<THSP> THSP { get; set; }
-
     public virtual DbSet<To> To { get; set; }
 
     public virtual DbSet<Tonkho> Tonkho { get; set; }
@@ -67,6 +65,10 @@ public partial class TinPhatEntities : DbContext
     public virtual DbSet<TP> TP { get; set; }
 
     public virtual DbSet<User> User { get; set; }
+
+    public virtual DbSet<THSP> THSP { get; set; }
+
+    public virtual DbSet<THSPTN> THSPTN { get; set; }
 
 }
 

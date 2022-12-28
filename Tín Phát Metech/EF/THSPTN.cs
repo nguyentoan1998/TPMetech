@@ -15,12 +15,14 @@ namespace Tín_Phát_Metech.EF
 using System;
     using System.Collections.Generic;
     
-public partial class THSP
+public partial class THSPTN
 {
 
-    public string MaTHSP { get; set; }
+    public string MaTHSPTN { get; set; }
 
-    public short Date { get; set; }
+    public Nullable<short> Date { get; set; }
+
+    public string MaTo { get; set; }
 
     public string MaKho { get; set; }
 
@@ -32,6 +34,8 @@ public partial class THSP
 
     public string MaDV { get; set; }
 
+    public string MaNV { get; set; }
+
     public short SL { get; set; }
 
     public string MaDG { get; set; }
@@ -39,8 +43,6 @@ public partial class THSP
     public decimal Tien { get; set; }
 
     public string Note { get; set; }
-
-    public string MaTo { get; set; }
 
 }
 

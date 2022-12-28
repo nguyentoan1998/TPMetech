@@ -23,6 +23,10 @@ namespace Tín_Phát_Metech.Model
         {
             return db.To.FirstOrDefault(x => x.MaTo == ID);
         }
+        public To getItemTo(string ID)
+        {
+            return db.To.FirstOrDefault(x => x.TenTo == ID);
+        }
         public List<To> getList()
         {
             return db.To.ToList();
